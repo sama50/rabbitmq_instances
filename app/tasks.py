@@ -10,16 +10,16 @@ from celery import shared_task
 # def heavy_task():
 #     print("=======================heyo ")
 
-from rabbitmq_instances.celery import app_1, app_2
+from celery import shared_task
 
 
-@app_1.task
+@shared_task
 def light_task():
     print("=-==------------hey")
 
 
 #
 #
-@app_2.task
+@shared_task
 def heavy_task():
     print("=======================heyo ")
